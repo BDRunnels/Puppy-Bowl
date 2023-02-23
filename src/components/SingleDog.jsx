@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
 
 const SingleDog = (props) => {
     const { idNumber } = useParams();
@@ -11,12 +12,23 @@ const SingleDog = (props) => {
 
     const selectedDog = selectedDogArray[0]
 
+    
     console.log(selectedDogArray)
     return (
         <div>
-            <h3> Name: {selectedDog.name} </h3>
+            <button> <Link to="/players"> Player List </Link></button>
+
+            <h2> Name: {selectedDog.name} </h2>
+            <h2> Breed: {selectedDog.breed} </h2>
+            <h2> Status: On the {selectedDog.status} </h2>
+            <h2> <img src={selectedDog.imageUrl} alt="Anise" className="individualDog"></img> </h2>
             
+
         </div>
+
+
+
+
     )
 }
 

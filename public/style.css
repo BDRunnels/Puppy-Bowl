@@ -1,0 +1,10 @@
+.individualDog {
+    width: 20%;
+    height: auto;
+    border-radius: 20%;
+    box-shadow: 1em 1em 1em orange;
+}
+
+h1 {
+    background-color: blue;
+}

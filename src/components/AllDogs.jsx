@@ -11,7 +11,10 @@ const AllDogs = (props) => {
     })
     return (
         <div>
-            <h1> List of Available Players </h1>
+            <button onClick={() => {
+                allButton.style.visibility = "visible";
+            }}><Link to="/"> Home Page </Link></button>
+            <h2> List of Available Players </h2>
             <input
                     type="text"
                     placeholder="Search for a Player Here"
@@ -20,9 +23,7 @@ const AllDogs = (props) => {
                         setSearchForSingleDog(event.target.value);
                     }}
             ></input>
-            <button onClick={() => {
-                allButton.style.visibility = "visible";
-            }}><Link to="/"> Home Page </Link></button>
+      
             
             {
                         dogsSearch.length ? dogsSearch.map((singleDog, index) => {
