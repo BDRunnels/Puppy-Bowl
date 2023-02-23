@@ -20,17 +20,17 @@ const AllDogs = (props) => {
                         setSearchForSingleDog(event.target.value);
                     }}
             ></input>
-            <button><Link to="/"> Go Back to Team Page </Link></button>
+            <button onClick={() => {
+                allButton.style.visibility = "visible";
+            }}><Link to="/"> Home Page </Link></button>
             
             {
                         dogsSearch.length ? dogsSearch.map((singleDog, index) => {
                             return (
                                 <div key={index}> 
                                     <h3> Name : {singleDog.name} </h3>
-                                    <p>  Is a breed of {singleDog.breed}. </p>
-                                    <p>  Is currently on the : {singleDog.status}</p>
-                                    <p>  Team: {singleDog.teamId}</p>
-
+                                    <p>  Individual Stats & Information for : {singleDog.name} below! </p>
+                                    <button> <Link to={`/players/${singleDog.id}`}> Details! </Link></button>
                                 </div>
                             ) 
                         }) : <h2> No available players with that letter! Try your search again. </h2>

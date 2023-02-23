@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { AllDogs } from "./components";
+import { AllDogs, Home, SingleDog } from "./components";
 
 const App = () => {
     const [dogs, setDogs] = useState([]);
@@ -43,10 +43,13 @@ const App = () => {
                     ></input> */}
                     <button id="allButton" onClick={() => {
                         allButton.style.visibility = "visible" ? allButton.style.visibility = "hidden" : allButton.style.visibility = "visible"
-                    }}> <Link to ="/players"> Click Here for All Players </Link></button>
+                    }}> <Link to ="/players"> Player List </Link></button>
 
                     <Routes>
                         <Route path="/players" element={<AllDogs dogProps={dogs}/>} />
+
+                        <Route path="/players/:idNumber" element={<SingleDog dogProps={dogs}/>} />
+
                     </Routes>
 
                     {/* {
