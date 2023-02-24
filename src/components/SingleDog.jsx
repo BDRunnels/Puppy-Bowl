@@ -12,16 +12,16 @@ const SingleDog = (props) => {
 
     const selectedDog = selectedDogArray[0]
 
-    
+
     console.log(selectedDogArray)
     return (
-        <div>
-            <button> <Link to="/players"> Player List </Link></button>
+        <div className="flex">
+            <button className="allButtons"> <Link to="/players"> Player List </Link></button>
 
             <h2> Name: {selectedDog.name} </h2>
             <h2> Breed: {selectedDog.breed} </h2>
             <h2> Status: On the {selectedDog.status} </h2>
-            <h2> <img src={selectedDog.imageUrl} alt="Anise" className="individualDog"></img> </h2>
+            <h2> <img src={selectedDog.imageUrl} alt="Anise" id="individualDogPage"></img> </h2>
             
 
         </div>

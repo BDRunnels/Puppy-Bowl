@@ -32,17 +32,19 @@ const App = () => {
     return (
         <BrowserRouter>
             <div>
-                    <h1> Puppy Bowl </h1>
+                    <header> 
+                        <h1> Puppy Bowl </h1>
+                    </header>
 
                     
-                    <button id="allButton" onClick={() => {
-                        allButton.style.visibility = "visible" ? allButton.style.visibility = "hidden" : allButton.style.visibility = "visible"
-                    }}> <Link to ="/players"> Player List </Link></button>
+                    
 
                     <Routes>
                         <Route path="/players" element={<AllDogs dogProps={dogs}/>} />
 
                         <Route path="/players/:idNumber" element={<SingleDog dogProps={dogs}/>} />
+
+                        <Route path="/" element={<Home dogProps={dogs}/>} />
 
                     </Routes>
                

@@ -10,10 +10,10 @@ const AllDogs = (props) => {
         return singleDog.name.toLowerCase().includes(searchForSingleDog.toLowerCase())
     })
     return (
-        <div>
-            <button onClick={() => {
-                allButton.style.visibility = "visible";
-            }}><Link to="/"> Home Page </Link></button>
+        <div className="flex">
+            <button /* className="allButtons" onClick={() => {
+                allButtons.style.visibility = "visible";
+            }} */><Link to="/"> Home Page </Link></button>
             <h2> List of Available Players </h2>
             <input
                     type="text"
@@ -24,19 +24,21 @@ const AllDogs = (props) => {
                     }}
             ></input>
       
-            
+            <section className="playersFlex">
             {
                         dogsSearch.length ? dogsSearch.map((singleDog, index) => {
                             return (
                                 <div key={index}> 
                                     <h3> Name : {singleDog.name} </h3>
-                                    <p>  Individual Stats & Information for : {singleDog.name} below! </p>
-                                    <button> <Link to={`/players/${singleDog.id}`}> Details! </Link></button>
+                                    <p>  Information for {singleDog.name} below! </p>
+                                    <img src={singleDog.imageUrl} className="individualDog"/>
+                                    <br/>
+                                    <button className="allDogButtons"> <Link to={`/players/${singleDog.id}`}> Details! </Link></button>
                                 </div>
                             ) 
                         }) : <h2> No available players with that letter! Try your search again. </h2>
             }
-
+            </section>
         </div>
     )
 }
