@@ -20,7 +20,9 @@ const SingleDog = (props) => {
 
             <h2> Name: {selectedDog.name} </h2>
             <h2> Breed: {selectedDog.breed} </h2>
-            <h2> Status: On the {selectedDog.status} </h2>
+            {
+            selectedDog.status == "bench" ? <h2 style={{textAlign:"center"}}> Status : On the {selectedDog.status} for chewing up {Math.floor(Math.random() * 20)} footballs and soiling {Math.ceil(Math.random() * 10)} fields! Get it together {selectedDog.name}! </h2> : <h2> Status : On the {selectedDog.status} </h2>
+            } 
             <h2> <img src={selectedDog.imageUrl} alt="Anise" id="individualDogPage"></img> </h2>
             
 
